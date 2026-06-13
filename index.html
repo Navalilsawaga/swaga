@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 причин</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: #e94560;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .card {
+            background: #16213e;
+            padding: 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            min-width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .card:hover { transform: translateY(-5px); }
+        #reason {
+            font-size: 1.8em;
+            margin: 20px 0;
+            min-height: 80px;
+        }
+        .btn {
+            background: #e94560;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="showReason()">
+        <p>💌 Кликни на конверт 💌</p>
+        <p id="reason">Я люблю тебя, потому что...</p>
+    </div>
+    <button class="btn" onclick="showReason()">Показать ещё причину</button>
+
+    <script>
+        // НАПИШИ СВОИ ПРИЧИНЫ (можно больше 100!)
+        const reasons = [
+            "...твоя улыбка освещает мой день",
+            "...ты умеешь слушать как никто другой",
+            "...с тобой даже молчать комфортно",
+            "...ты веришь в меня, когда я сам не верю",
+            "...твой смех заразителен",
+            "...ты самая красивая",
+            "...ты делаешь меня лучше"
+        ];
+
+        function showReason() {
+            const random = reasons[Math.floor(Math.random() * reasons.length)];
+            document.getElementById('reason').textContent = random;
+        }
+        showReason(); // Показать первую при загрузке
+    </script>
+</body>
+</html>
